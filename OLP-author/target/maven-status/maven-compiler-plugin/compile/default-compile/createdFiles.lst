@@ -1,0 +1,9 @@
+com\OLP\author\AuthorApplication.class
+com\OLP\author\mapper\PublicationMapper.class
+com\OLP\author\intercepter\LoginInterceptor.class
+com\OLP\author\controller\PublicationController.class
+com\OLP\author\Rpc\UserRpc.class
+com\OLP\author\service\PublicationService.class
+com\OLP\author\util\JwtUtil.class
+com\OLP\author\config\AuthorGlobalConfig.class
+com\OLP\author\service\impl\PublicationServiceImpl.class

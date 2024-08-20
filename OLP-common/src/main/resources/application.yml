@@ -1,0 +1,8 @@
+#配置JWT的信息
+yh:
+  jwt:
+    admin-secretkey: mysecret #jwt令牌签名加密时使用的密钥
+    admin-ttl: 7200000 #设置jwt过期时间
+    Token-name: token #前端穿过来的令牌名称
+OnlineBooks:
+  path: D:\photo\Onlinebooks_photo\

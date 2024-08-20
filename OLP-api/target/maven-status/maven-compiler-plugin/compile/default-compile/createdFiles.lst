@@ -1,0 +1,3 @@
+com\OLP\api\UserFeignService.class
+com\OLP\api\BookFeignService.class
+com\OLP\api\OssFeignService.class

@@ -1,0 +1,11 @@
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\controller\FileController.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\OssApplication.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\service\FileService.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\config\StorageConfig.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\entity\FileInfo.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\adapter\AliStorageAdapter.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\util\MinioUtil.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\adapter\MinioStorageAdapter.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\config\MinioConfig.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\adapter\StorageAdapter.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-OSS\src\main\java\com\club\oss\entity\OssDto.java

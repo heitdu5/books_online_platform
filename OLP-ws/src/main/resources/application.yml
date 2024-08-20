@@ -1,0 +1,94 @@
+server:
+  port: 8082
+feign:
+  sentinel:
+    enabled: true # 开启feign对sentinel的支持
+spring:
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: "1234"
+      url: jdbc:mysql://localhost:3306/online_library_platform?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+  profiles:
+    active: dev
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090
+      http-method-specify: true
+  redis:
+    # Redis数据库索引（默认为0）
+    database: 1
+    # Redis服务器地址
+    host: 192.168.232.112
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password: yh1234
+    # 连接超时时间
+    timeout: 2s
+    lettuce:
+      pool:
+        # 连接池最大连接数
+        max-active: 200
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1ms
+        # 连接池中的最大空闲连接
+        max-idle: 10
+        # 连接池中的最小空闲连接
+        min-idle: 0
+  sa-token:
+    # token 名称（同时也是 cookie 名称）
+    token-name: satoken
+    # token 有效期（单位：秒） 默认30天，-1 代表永久有效
+    timeout: 2592000
+    # token 最低活跃频率（单位：秒），如果 token 超过此时间没有访问系统就会被冻结，默认-1 代表不限制，永不冻结
+    active-timeout: -1
+    # 是否允许同一账号多地同时登录 （为 true 时允许一起登录, 为 false 时新登录挤掉旧登录）
+    is-concurrent: true
+    # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
+    is-share: true
+    # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
+    token-style: random-32
+    # 是否输出操作日志
+    is-log: true
+    is-read-cookie: false
+    token-prefix: jichi
+    mybatis-plus:
+      type-aliases-package: com.party.smartpartybuilding.pojo # 别名扫描包
+    logging:
+      level:
+        com.smartpartybuilding.mapper: debug
+mybatis-plus:
+  configuration:
+    # MyBatis 日志输出实现类配置
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 开启驼峰命名转换
+    map-underscore-to-camel-case: true
+  # Mapper XML 文件的位置配置，可以使用通配符
+  mapper-locations: classpath*:/com/party/smartpartybuilding/mapper/*.xml
+  # 全局配置
+  global-config:
+    db-config:
+      # 主键类型配置，这里设置为自动增长
+      id-type: AUTO
+  elasticsearch:
+    rest:
+      uris: http://192.168.232.112:9200
+
+#配置JWT的信息
+yh:
+  jwt:
+    admin-secretkey: mysecret #jwt令牌签名加密时使用的密钥
+    admin-ttl: 7200000 #设置jwt过期时间
+    Token-name: token #前端穿过来的令牌名称
+
+
+OnlineBooks:
+  path: D:\photo\Onlinebooks_photo\

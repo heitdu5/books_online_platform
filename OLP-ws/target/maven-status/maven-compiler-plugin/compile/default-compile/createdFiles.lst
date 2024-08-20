@@ -1,0 +1,17 @@
+com\OLP\ws\util\MessageUtils.class
+com\OLP\ws\WsApplication.class
+com\OLP\ws\mapper\ReadstatusMapper.class
+com\OLP\ws\service\InteractionService.class
+com\OLP\ws\interceptor\WebSocketInterceptor.class
+com\OLP\ws\pojo\ResultMessage.class
+com\OLP\ws\config\WebsocketListener.class
+com\OLP\ws\mapper\InteractionMapper.class
+com\OLP\ws\service\impl\InteractionServiceImpl.class
+com\OLP\ws\service\impl\ReadstatusServiceImpl.class
+com\OLP\ws\ChatEndpoint.class
+com\OLP\ws\rpc\UserRpc.class
+com\OLP\ws\pojo\Message.class
+com\OLP\ws\config\GetHttpSessionConfig.class
+com\OLP\ws\controller\InteractionController.class
+com\OLP\ws\service\ReadstatusService.class
+com\OLP\ws\config\WebsocketConfig.class

@@ -1,0 +1,19 @@
+server:
+  port: 4000
+minio:
+  url: http://192.168.232.112:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+#nacos:
+#  config:
+#    access-key: nacos
+#    secret-key: nacos
+#    data-id: jc-club-oss
+#    group: DEFAULT_GROUP
+#    type: yaml
+#    server-addr: http://192.168.232.112:8848/
+#    auto-refresh: true #表示是否自动刷新配置，设置为true表示开启自动刷新。
+#    remote-first: true #表示是否优先使用远程配置，设置为true表示优先使用远程配置。
+#    bootstrap:
+#      enable: true #启用Bootstrap
+#当前注释是因为bootstrap已经代替上面配置

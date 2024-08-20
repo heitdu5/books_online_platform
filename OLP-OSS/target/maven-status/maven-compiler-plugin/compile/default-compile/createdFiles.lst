@@ -1,0 +1,11 @@
+com\club\oss\entity\FileInfo.class
+com\club\oss\adapter\MinioStorageAdapter.class
+com\club\oss\entity\OssDto.class
+com\club\oss\config\StorageConfig.class
+com\club\oss\controller\FileController.class
+com\club\oss\service\FileService.class
+com\club\oss\adapter\StorageAdapter.class
+com\club\oss\util\MinioUtil.class
+com\club\oss\config\MinioConfig.class
+com\club\oss\OssApplication.class
+com\club\oss\adapter\AliStorageAdapter.class

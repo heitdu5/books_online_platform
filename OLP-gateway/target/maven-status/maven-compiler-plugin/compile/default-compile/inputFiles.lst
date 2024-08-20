@@ -1,0 +1,11 @@
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\entity\Result.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\auth\SaTokenConfigure.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\GatewayApplication.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\redis\RedisUtil.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\auth\StpInterfaceImpl.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\entity\AuthRole.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\enums\ResultCodeEnum.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\entity\AuthPermission.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\filter\LoginFilter.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\redis\RedisConfig.java
+D:\mycode\书籍推荐交流平台-微服务拆分\OLP\Online_library_platform\OLP-gateway\src\main\java\com\OLP\gateway\exception\GatewayExceptionHandler.java

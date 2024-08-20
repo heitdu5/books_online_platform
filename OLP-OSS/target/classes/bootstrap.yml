@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: yh-olp-oss
+  profiles:
+    active: dev #环境名
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.232.112:8848
+        prefix: ${spring.application.name}  # + active
+        group: DEFAULT_GROUP
+        namespace:
+        file-extension: yaml
+      discovery:
+        enabled: true #指定了服务发现
+        server-addr: 192.168.232.112:8848

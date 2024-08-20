@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/OLP-OSS/OLP-books/lib" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-OSS/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-OSS/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-author/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-author/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-books/OLP-books/lib" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-books/lib" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-books/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-books/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-gateway/OLP-books/lib" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-mq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-mq/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-users/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-users/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-ws/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP-ws/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

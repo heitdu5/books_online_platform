@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="OLP-auth" />
+        <module name="OLP-users" />
+        <module name="OLP-ws" />
+        <module name="OLP-common" />
+        <module name="OLP-gateway" />
+        <module name="OLP-api" />
+        <module name="OLP-author" />
+        <module name="OLP-OSS" />
+        <module name="OLP-mq" />
+        <module name="OLP-books" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="OLP-books" options="" />
+      <module name="OLP-gateway" options="" />
+      <module name="Online_library_platform" options="" />
+    </option>
+  </component>
+</project>
