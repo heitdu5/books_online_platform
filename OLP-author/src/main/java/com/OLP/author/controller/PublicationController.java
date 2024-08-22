@@ -331,7 +331,7 @@ public class PublicationController {
             if (entry.getValue()==null) {
                 countMap.put(bookName, 0);
             }
-            else countMap.put(bookName, entry.getValue());
+            else {countMap.put(bookName, entry.getValue());}
         }
         return R.success(countMap);
     }

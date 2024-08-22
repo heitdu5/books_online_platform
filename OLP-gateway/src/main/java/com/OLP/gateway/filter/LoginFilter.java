@@ -1,5 +1,6 @@
 package com.OLP.gateway.filter;
 
+import cn.dev33.satoken.reactor.context.SaReactorSyncHolder;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import com.alibaba.cloud.commons.lang.StringUtils;
@@ -21,6 +22,7 @@ public class LoginFilter implements GlobalFilter {
     @Override
     @SneakyThrows
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        SaReactorSyncHolder.setContext(exchange);//写入全局上下文(同步),解决->未能获取有效上下文
         ServerHttpRequest request = exchange.getRequest();
         ServerHttpRequest.Builder mutate = request.mutate();
         String url = request.getURI().getPath();

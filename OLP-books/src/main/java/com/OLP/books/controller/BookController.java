@@ -1,31 +1,29 @@
 package com.OLP.books.controller;
 
+
+import com.OLP.books.common.R;
 import com.OLP.common.entity.MqConstants;
+import com.OLP.common.exception.DataException;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import org.apache.commons.lang3.StringUtils;
 import com.OLP.common.dto.BookDto;
 import com.OLP.common.pojo.Book;
 import com.OLP.common.pojo.BookEs;
-import com.OLP.common.pojo.User;
 import com.OLP.common.redis.RedisUtil;
 import com.OLP.common.vo.BooksearchVo;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.OLP.books.common.R;
-import com.OLP.books.common.exception.DataException;
 import com.OLP.books.service.BookService;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.HttpHost;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
-import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.search.suggest.Suggest;
@@ -36,7 +34,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -46,9 +43,7 @@ import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
-import static com.OLP.common.entity.SystemConstants.PAGE_SELECT_NONAME;
+import com.OLP.common.entity.SystemConstants;
 
 /**
  * 书籍搜索推荐功能
@@ -149,13 +144,13 @@ public class BookController {
     public R<String> auditCheck(@RequestParam Long bookId,@RequestParam Boolean isAudit){
         Book book = bookService.getById(bookId);
         //第一次删
-        redisUtil.deleteKeysBypattern(PAGE_SELECT_NONAME);
+        redisUtil.deleteKeysBypattern(SystemConstants.PAGE_SELECT_NONAME);
         if (isAudit){
             book.setStatus("1");
             bookService.updateById(book);
             //延迟双删
             long delayMillis = 5000; // 延迟5秒
-            scheduleDelayedDelete(PAGE_SELECT_NONAME,delayMillis);
+            scheduleDelayedDelete(SystemConstants.PAGE_SELECT_NONAME,delayMillis);
             //发送消息同步数据(增加)
             rabbitTemplate.convertAndSend(MqConstants.BOOKS_EXCHANGE,MqConstants.BOOKS_INSERTORUPDATE_KEY,bookId);
         } else {
@@ -163,7 +158,7 @@ public class BookController {
             bookService.updateById(book);
             //延迟双删
             long delayMillis = 5000; // 延迟5秒
-            scheduleDelayedDelete(PAGE_SELECT_NONAME,delayMillis);
+            scheduleDelayedDelete(SystemConstants.PAGE_SELECT_NONAME,delayMillis);
             //发送消息同步数据(删除)
             rabbitTemplate.convertAndSend(MqConstants.BOOKS_EXCHANGE,MqConstants.BOOKS_DELETE_KEY,bookId);
         }
@@ -193,7 +188,7 @@ public class BookController {
         }
         if (isTokenOff) {
             //删除缓存
-            redisUtil.deleteKeysBypattern(PAGE_SELECT_NONAME);
+            redisUtil.deleteKeysBypattern(SystemConstants.PAGE_SELECT_NONAME);
             book.setStatus("2");
             bookService.updateById(book);
             //发送消息同步数据(删除)
@@ -260,7 +255,7 @@ public class BookController {
         Page<Book> pagelist = null;
         //1.name和date都为空进入全部数据查询
         if (StringUtils.isBlank(name) && StringUtils.isBlank(category)  && sdate == null && edate == null &&page == 1 ) {
-            String listjson =  redisUtil.get(PAGE_SELECT_NONAME +  pageSize);
+            String listjson =  redisUtil.get(SystemConstants.PAGE_SELECT_NONAME +  pageSize);
             pagelist = new Gson().fromJson(listjson, new TypeToken<Page<Book>>() {}.getType());
             //1.1判断缓存是否存在
             if (pagelist != null) {

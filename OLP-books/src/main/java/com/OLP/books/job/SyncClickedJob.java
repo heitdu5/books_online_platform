@@ -45,6 +45,7 @@ public class SyncClickedJob {
     public void syncClickHandler() throws Exception {
         XxlJobHelper.log("syncClickHandler.starter");
         try {
+            log.info("syncClicked.Handler.同步点击量");
             bookService.syncClicks();
         } catch (Exception e) {
             XxlJobHelper.log("syncClickHandler.error" + e.getMessage());

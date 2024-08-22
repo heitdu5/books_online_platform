@@ -1,6 +1,7 @@
 package com.OLP.books.service.impl;
 
 import com.OLP.books.common.R;
+import com.OLP.common.entity.SystemConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -43,7 +44,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -53,9 +53,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-
-import static com.OLP.common.entity.SystemConstants.PAGE_SELECT_NONAME;
-
 
 @Service
 @Slf4j
@@ -183,7 +180,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
             //9.要注意设置total值不然会有bug
             pageinfo.setTotal(response.getHits().getTotalHits().value);
             pageinfo.setRecords(books);
-            redisUtil.setNx(PAGE_SELECT_NONAME + pageSize, new Gson().toJson(pageinfo), 48L, TimeUnit.HOURS);
+            redisUtil.setNx(SystemConstants.PAGE_SELECT_NONAME + pageSize, new Gson().toJson(pageinfo), 48L, TimeUnit.HOURS);
             return R.success(pageinfo);
         }catch (IOException e) {
             throw new RuntimeException(e);
@@ -285,6 +282,9 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
             GetResponse response = client.get(getRequest, RequestOptions.DEFAULT);
             // 3.解析
             Map<String, Object> sourceAsMap = response.getSourceAsMap();
+            if (sourceAsMap == null){
+                return ;
+            }
             // 获取 clicks 字段的值
             int currentClicks = (int) sourceAsMap.get("clicks");
             int newClicks = currentClicks + 1;
@@ -296,7 +296,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
             throw new RuntimeException("增加点击量失败",e);
         }
         //删除缓存
-        redisUtil.deleteKeysBypattern(PAGE_SELECT_NONAME);
+        redisUtil.deleteKeysBypattern(SystemConstants.PAGE_SELECT_NONAME);
     }
 
     /**

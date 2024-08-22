@@ -91,15 +91,27 @@ mybatis-plus:
 xxl:
   job:
     admin:
-      addresses: http://127.0.0.1:8080/xxl-job-admin
+      addresses: http://192.168.232.112:8088/xxl-job-admin
     accessToken: default_token
     executor:
-      appname: yh-olp-books
+      appname: yh-olp-author
       address:
-      ip: 127.0.0.1
-      port: 9999
+      ip: 192.168.232.112
+      port: 9998 #由于author本身引入了books（这里不应该这么做，但是已经做了），所以必须要配置xxl-job，又因为和books的端口冲突，所以这里将author的端口改为9998
       logpath: /data/applogs/xxl-job/jobhandler
       logretentiondays: 30
+#xxl:
+#  job:
+#    admin:
+#      addresses: http://127.0.0.1:8080/xxl-job-admin
+#    accessToken: default_token
+#    executor:
+#      appname: yh-olp-books
+#      address:
+#      ip: 127.0.0.1
+#      port: 9999
+#      logpath: /data/applogs/xxl-job/jobhandler
+#      logretentiondays: 30
 #配置JWT的信息
 yh:
   jwt:

@@ -17,4 +17,6 @@ public class SystemConstants {
 
     public static final String AUTH_ROLE_PREFIX = "auth.role";
 
+    public static final String ALIYUN_ACCESS_KEY = "SMS_464066219";
+
 }

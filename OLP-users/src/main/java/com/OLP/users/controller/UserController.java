@@ -405,7 +405,7 @@ public class UserController {
             redisTemplate.expire(SystemConstants.USER_SEND_FREQUENCY + phoneNumber, 24L, TimeUnit.HOURS);
 
             //调用阿里云提供的短信服务API完成发送短信
-            SMSUtils.sendMessage("黑T毒物","SMS_464066219",phoneNumber,code);
+            SMSUtils.sendMessage("黑T毒物",SystemConstants.ALIYUN_ACCESS_KEY,phoneNumber,code);
 
             //将生成的验证码保存到session
             session.setAttribute(phoneNumber, code);
